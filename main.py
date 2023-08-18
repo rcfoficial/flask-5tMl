@@ -31,7 +31,10 @@ def list_numbers():
         "_id": 0
     }).sort("_id", -1):
         result.append(entry)
-    return jsonify(result)
+
+    # Encapsula os resultados em uma chave "data"
+    response_data = {"data": result}
+    return jsonify(response_data)
 
 
 @app.route('/list_numbers/<number_sim>')
@@ -48,7 +51,10 @@ def list_numbers_by_number_sim(number_sim):
         "_id": 0
     }).sort("_id", -1):
         result.append(entry)
-    return jsonify(result)
+
+    # Encapsula os resultados em uma chave "data"
+    response_data = {"data": result}
+    return jsonify(response_data)
 
 
 if __name__ == '__main__':
